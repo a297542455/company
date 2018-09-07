@@ -2,14 +2,24 @@
     "use strict";
     
     $(document).ready(function(){
-        
+
+    // this code is for load head and foot
+    $("body").load("./header.html").load("./footer.html"，function(){
+        var url = location.href;
+        var currentHtml = url.substring(url.lastIndexOf('/')+1);
+        $("a[href='"+currentHtml+"']").attr("href","javascript:;").parent("#nav li").addClass('current_page_item')
+        $("a").attr("href","javascript:;").click(function(){
+            alert("对不起，功能尚未开发");
+        })
+    });
+
         
     // this code is for meanmenu
     $('.header_area .mainmenu nav').meanmenu();
     
     
     // this code is for instafeed jquery
-    var userFeed = new Instafeed({
+    /*var userFeed = new Instafeed({
         limit: 6,
         get: 'tagged',
         tagName: 'corporate',
@@ -17,7 +27,8 @@
         template: '<a target="_blank" href="{{link}}"><img src="{{image}}" /></a>',
     });
     userFeed.run();
-    
+    */
+   
     
     
     // this code is for accordion_area
