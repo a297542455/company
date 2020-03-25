@@ -8,9 +8,9 @@
             var url = location.href;
             var currentHtml = url.substring(url.lastIndexOf('/') + 1);
             $("a[href='" + currentHtml + "']").attr("href", "javascript:;").parent("#nav li").addClass('current_page_item')
-            $("a").attr("href", "javascript:;").click(function () {
-                alert("对不起，功能尚未开发");
-            })
+            // $("a").attr("href", "javascript:;").click(function () {
+            //     alert("对不起，功能尚未开发");
+            // })
         });
 
 
